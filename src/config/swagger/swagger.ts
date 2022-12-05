@@ -14,7 +14,7 @@ export class SwaggerConfig {
         to be able to authenticate in the different routes used to 
         interact with the store's products)`,
       )
-      .setVersion('v0.0.1')
+      .setVersion('v1.0.1')
       .build();
     const document = SwaggerModule.createDocument(app, config);
     SwaggerModule.setup('api/v1/accounting-management/docs', app, document, {
