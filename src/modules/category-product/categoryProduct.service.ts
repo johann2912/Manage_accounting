@@ -50,6 +50,7 @@ export class CategoryProductService {
         data: IUpdateCategoryProduct
     ){
         await this.validateRoleUser(userId);
+        await this.vaidateSpecialCharacters(data.code);
         const existCategoryProduct = await this.databaseService.categoryProducts.findOne(categoryProductId);
         if(!existCategoryProduct) this.exceptions.notFoundException({
             message: 'category products does not found'

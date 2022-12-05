@@ -5,6 +5,7 @@ import { RedisModule } from './frameworks/redis/redis.module';
 import { AuthModule } from './modules/auth/auth.module';
 import { CategoryProductModule } from './modules/category-product/categoryProduct.module';
 import { CompanyModule } from './modules/company/company.module';
+import { ProductModule } from './modules/product/product.module';
 import { UserModule } from './modules/user/user.module';
 
 
@@ -19,6 +20,7 @@ import { UserModule } from './modules/user/user.module';
   AuthModule,
   CategoryProductModule,
   CompanyModule,
+  ProductModule,
   ],
   controllers: [],
   providers: [],
