@@ -4,4 +4,5 @@ export abstract class IGenericRepository<T> {
     public abstract create(item:T): Promise<T>;
     public abstract update(id:string, item: T): Promise<void>;
     public abstract delete(id:string): Promise<void>;
+    public abstract softdelete(id:string): Promise<void>;
 };

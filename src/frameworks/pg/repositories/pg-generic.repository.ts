@@ -6,8 +6,7 @@ export class PgGenericRepository<T> implements IGenericRepository<T> {
   
     constructor(repository: Repository<T>) {
       this._repository = repository;
-    }
-  
+    }  
     public async findAll(): Promise<T[]> {
       return this._repository.find();
     };
@@ -31,4 +30,9 @@ export class PgGenericRepository<T> implements IGenericRepository<T> {
     public async delete(id: string): Promise<void> {
       this._repository.delete(id);
     };
+
+    public async softdelete(id: string): Promise<void> {
+      this._repository.softDelete(id);
+    }
+    
 };

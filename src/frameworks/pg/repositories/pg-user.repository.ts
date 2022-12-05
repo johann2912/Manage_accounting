@@ -12,4 +12,13 @@ export class PgUserRepository<T>
             }
         });
     };
+
+    public async findByDocument(documentNumber: string): Promise<T> {
+        return await this._repository.findOne({
+            where: {
+                documentNumber
+            }
+        });
+    };
+    
 };

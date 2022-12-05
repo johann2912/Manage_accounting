@@ -17,7 +17,7 @@ export class PgDatabaseService
 {
   public users: IUserRepository<User>;
   public products: IProductRepository<Product>;
-  public companies: ICompanyRepository<Company>;
+  public company: ICompanyRepository<Company>;
   public categoryProducts: ICategoryProductRepository<CategoryProduct>;
 
   constructor(
@@ -33,7 +33,7 @@ export class PgDatabaseService
 
   public onApplicationBootstrap() {
     this.users = new PgUserRepository<User>(this.userRepository);
-    this.companies = new PgCompanyRepository<Company>(this.companyRepository);
+    this.company = new PgCompanyRepository<Company>(this.companyRepository);
     this.products = new PgProductRepository<Product>(this.productRepository);
     this.categoryProducts = new PgCompanyRepository<CategoryProduct>(this.categoryProductsRepository);
   };
