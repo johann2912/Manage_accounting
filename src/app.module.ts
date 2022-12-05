@@ -4,6 +4,7 @@ import { PgDatabaseModule } from './frameworks/pg/pg-data.module';
 import { RedisModule } from './frameworks/redis/redis.module';
 import { AuthModule } from './modules/auth/auth.module';
 import { CategoryProductModule } from './modules/category-product/categoryProduct.module';
+import { CompanyModule } from './modules/company/company.module';
 import { UserModule } from './modules/user/user.module';
 
 
@@ -17,6 +18,7 @@ import { UserModule } from './modules/user/user.module';
   UserModule,
   AuthModule,
   CategoryProductModule,
+  CompanyModule,
   ],
   controllers: [],
   providers: [],
