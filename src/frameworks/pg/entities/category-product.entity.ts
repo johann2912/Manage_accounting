@@ -1,9 +1,10 @@
 import { Timestamp } from "./timestamp.entity";
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { Product } from "./product.entity";
+import { ICreateCategoryProduct } from "src/modules/category-product/interfaces/create-category-product.interface";
 
 @Entity()
-export class CategoryProduct extends Timestamp {
+export class CategoryProduct extends Timestamp implements ICreateCategoryProduct {
     @PrimaryGeneratedColumn('uuid')
     id?: string;
     @Column({type: String, unique: true, nullable: false})

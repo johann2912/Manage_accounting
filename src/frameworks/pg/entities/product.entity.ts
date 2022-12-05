@@ -7,17 +7,17 @@ import { CategoryProduct } from "./category-product.entity";
 export class Product extends Timestamp {
     @PrimaryGeneratedColumn('uuid')
     id?: string;
-    @Column({type: String, unique: true, nullable: false})
+    @Column({type: String, unique: true, nullable: true})
     code?: string;
-    @Column({type: String, nullable: false})
+    @Column({type: String, nullable: true})
     name?: string;
-    @Column({type: String, nullable: false})
+    @Column({type: String, nullable: true})
     description?: string;
     @Column({type: String})
     brand: string;
-    @Column({type: 'bigint', nullable: false, default: 0})
+    @Column({type: 'bigint', nullable: true, default: 0})
     quantity: bigint;
-    @Column({type: 'bigint', nullable: false, default: 0})
+    @Column({type: 'bigint', nullable: true, default: 0})
     price: bigint;
     @Column({type: Boolean, default: true, nullable: false})
     active?: boolean;

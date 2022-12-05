@@ -22,7 +22,7 @@ async function bootstrap() {
   app.useGlobalFilters(new AllExceptionFilter(logger));
   app.useGlobalPipes(new ValidationPipe());
   app.enableCors();
-  app.setGlobalPrefix('api/v1/accounting-management/docs');
+  app.setGlobalPrefix('api/v1/accounting-management/');
   app.use(
     'api/v1/accounting-management/docs',
     basicAuth({

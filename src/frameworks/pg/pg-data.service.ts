@@ -10,6 +10,7 @@ import { Product, CategoryProduct, Company, User } from "./entities";
 import { PgCompanyRepository } from "./repositories/pg-company.repository";
 import { PgUserRepository } from "./repositories/pg-user.repository";
 import { PgProductRepository } from "./repositories/pg-product.repository";
+import { PgCategoryProductRepository } from "./repositories/pg-category-product.repository";
 
 @Injectable()
 export class PgDatabaseService
@@ -35,6 +36,6 @@ export class PgDatabaseService
     this.users = new PgUserRepository<User>(this.userRepository);
     this.company = new PgCompanyRepository<Company>(this.companyRepository);
     this.products = new PgProductRepository<Product>(this.productRepository);
-    this.categoryProducts = new PgCompanyRepository<CategoryProduct>(this.categoryProductsRepository);
+    this.categoryProducts = new PgCategoryProductRepository<CategoryProduct>(this.categoryProductsRepository);
   };
 };
