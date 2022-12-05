@@ -9,7 +9,6 @@ import { AllExceptionFilter } from './config/filter';
 import { TimeoutInterceptor } from './config/interceptors/timeout';
 import { ResponseInterceptor } from './config/interceptors/response';
 import { LoggingInterceptor } from './config/interceptors/logger';
-import config from './config/config';
 
 async function bootstrap() {
   const configService = new ConfigService();
@@ -28,10 +27,10 @@ async function bootstrap() {
     'api/v1/accounting-management/docs',
     basicAuth({
       challenge: true,
-      users: { dev: config.project.swagger_pass}
+      users: { dev: configService.get<string>('SWAGGER_PASS')}
     }),
   );
   SwaggerConfig.ConfigSwaggerModule(app);
-  await app.listen(config.project.port);
+  await app.listen(configService.get<number>('PORT'));
 };
 bootstrap();
